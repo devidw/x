@@ -1,4 +1,11 @@
+_shell rc_
 [source,shell]
 ----
-alias x='curl -s https://raw.githubusercontent.com/devidw/x/main/index.sh | bash -s'
+export D_X="/Users/devidw/Desktop/GitHub/x"
+
+if [ -d $D_X ]; then
+	alias x="$D_X/entry.sh"
+else
+	alias x='curl -s https://raw.githubusercontent.com/devidw/x/main/entry.sh | bash -s'
+fi
 ----
