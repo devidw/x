@@ -1,5 +1,9 @@
 = Interval Timer
 
+Deno module and CLI to script custom training intervals with voice notices.
+
+NOTE: macOS-only, since it requires the https://ss64.com/osx/say.html[`say`] command
+
 == CLI
 
 Shell rc file:

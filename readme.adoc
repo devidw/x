@@ -1,4 +1,4 @@
 [source,shell]
 ----
-deno run -A https://cdn.jsdelivr.net/gh/devidw/$1/index.ts
+alias x='curl -s https://raw.githubusercontent.com/devidw/x/main/index.sh | bash -s'
 ----
