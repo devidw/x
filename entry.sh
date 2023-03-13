@@ -37,6 +37,6 @@ echo $url
 
 if [ "$(check_url $url.ts)" -eq 1 ]; then
   deno run -A $url.ts $rest
-elif [ "$(check_url $url.sh)" -eq 1 ] 
+elif [ "$(check_url $url.sh)" -eq 1 ]; then
   curl -sSL $url.sh | bash
 fi
