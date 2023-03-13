@@ -1,0 +1,4 @@
+[source,shell]
+----
+deno run -A https://cdn.jsdelivr.net/gh/devidw/$1/index.ts
+----

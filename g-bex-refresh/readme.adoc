@@ -1,0 +1,20 @@
+= Chrome web store API refresh token helper
+
+Assistant to guide you through OAuth flow to quickly get a refresh token to the
+Google Chrome web store publishing API to be able to use auto
+publishing libraries for your extension projects.
+
+
+== Usage
+
+. Follow https://developer.chrome.com/docs/webstore/using_webstore_api/ and
+download your OAuth credentials into a `google.json` in the current directory.
+. Run `./index.ts` and follow the on-screen instructions, including copy/pasting
+the auth code into stdin
++
+[source,console]
+----
+deno run --allow-read --allow-run https://cdn.jsdelivr.net/gh/devidw/chrome-webstore-refresh-token-helper/index.ts
+----
+. Once all steps are completed, the refresh token is printed in the console. Use it
+to make use of other projects for auto publishing out there.

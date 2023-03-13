@@ -1,0 +1,44 @@
+= Interval Timer
+
+== CLI
+
+Shell rc file:
+
+[source,sh]
+----
+alias train='deno run --allow-net --allow-read --allow-run https://raw.githubusercontent.com/devidw/interval-timer/main/cli.ts $1'
+----
+
+Invoke:
+
+[source,console]
+----
+train ./training.json
+----
+
+
+== TS API
+
+[source,ts]
+----
+import { train } from "https://raw.githubusercontent.com/devidw/interval-timer/main/mod.ts"
+
+train("./training.json")
+
+// or
+
+train([{
+  name: "Pushups",
+  prepareTime: 5,
+  exerciseTime: 30,
+  exerciseRestTime: 10,
+  exerciseCount: 10,
+  roundCount: 3,
+}])
+----
+
+
+== Feature Ideas
+
+- way to see the total time of the complete training programm
+- ability to pause
