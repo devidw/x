@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source ~/.zshrc
+
 FOLDER_NAME="$(date +%y%m%d) $1"
 
 echo $FOLDER_NAME
@@ -8,7 +10,7 @@ mkdir -p "$FOLDER_NAME"
 
 cd "$FOLDER_NAME"
 
-curl -s https://raw.githubusercontent.com/devidw/devcontainers/master/add.sh | bash -s py-data
+x devcon py-data
 
 mkdir -p one/in one/out
 

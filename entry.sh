@@ -18,7 +18,7 @@ if [ "$D_X" ]; then
     exit $?
   elif [ -f "$path.sh" ]; then
     echo $path
-    bash $path.sh
+    zsh $path.sh $rest
     exit $?
   fi
 fi
@@ -38,5 +38,5 @@ echo $url
 if [ "$(check_url $url.ts)" -eq 1 ]; then
   deno run -A $url.ts $rest
 elif [ "$(check_url $url.sh)" -eq 1 ]; then
-  curl -sSL $url.sh | bash
+  curl -sSL $url.sh | bash -s $rest
 fi

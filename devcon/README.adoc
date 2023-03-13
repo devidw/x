@@ -1,0 +1,6 @@
+[source,console]
+----
+curl -s https://raw.githubusercontent.com/devidw/devcontainers/master/add.sh | bash -s <devcontainer-name>
+----
+
+TODO: clone entire folder instead of only fixed paths to allow custom files in config dirs to be cloned as well, for example php.ini

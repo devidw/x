@@ -1,0 +1,16 @@
+{
+	"image": "ghcr.io/foundry-rs/foundry:latest",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"files.exclude": {
+					"/lib": true
+				}
+			},
+			"extensions": [
+				"JuanBlanco.solidity",
+				"bungcip.better-toml"
+			]
+		}
+	}
+}
