@@ -1,0 +1,15 @@
+[
+  {
+    "roundCount": 2,
+    "children": [
+      {
+        "name": "abc",
+        "prepareTime": 0,
+        "exerciseTime": 2,
+        "exerciseRestTime": 0,
+        "exerciseCount": 1,
+        "roundCount": 1
+      }
+    ]
+  }
+]

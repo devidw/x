@@ -46,3 +46,4 @@ train([{
 
 - way to see the total time of the complete training programm
 - ability to pause
+- run multiple times

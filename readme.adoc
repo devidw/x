@@ -9,3 +9,6 @@ else
 	alias x='curl -s https://raw.githubusercontent.com/devidw/x/main/entry.sh | bash -s'
 fi
 ----
+
+todo: can we skip suffix detection and conditional interpreter and instead
+define bang line in all scripts?

@@ -1,3 +1,5 @@
+#!/usr/bin/env deno run --allow-read --allow-run
+
 async function getRefreshToken(code: string) {
   const response = await fetch(`https://accounts.google.com/o/oauth2/token`, {
     method: "POST",

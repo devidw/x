@@ -5,7 +5,7 @@ import { train } from "./mod.ts"
 
 await new Command()
   .name("interval-timer")
-  .version("12023.02.24")
+  .version("12023.03.14")
   .description("Interval timer for training or anything else.")
   .arguments("<path:string>")
   .action((_options, path: string) => train(path))

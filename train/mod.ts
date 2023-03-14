@@ -1,3 +1,5 @@
+import type { TrainingOptions } from "./types.ts"
+
 async function say(message: string) {
   console.log(message)
   const status = Deno.run({
@@ -12,32 +14,22 @@ async function block(name: string, timeout: number) {
   await new Promise((resolve) => setTimeout(resolve, timeout * 1000))
 }
 
-type TrainingOptions = {
-  name: string
-  prepareTime: number
-  exerciseTime: number
-  exerciseRestTime: number
-  exerciseCount: number
-  roundCount: number
-  roundRestTime: number
-}
-
-async function training(config: TrainingOptions) {
-  await block(`Prepare for ${config.name}`, config.prepareTime)
-  for (let roundIndex = 1; roundIndex <= config.roundCount; roundIndex++) {
+async function training(options: TrainingOptions) {
+  await block(`Prepare for ${options.name}`, options.prepareTime)
+  for (let roundIndex = 1; roundIndex <= options.roundCount; roundIndex++) {
     for (
       let exerciseIndex = 1;
-      exerciseIndex <= config.exerciseCount;
+      exerciseIndex <= options.exerciseCount;
       exerciseIndex++
     ) {
-      await block(`Go ${exerciseIndex}`, config.exerciseTime)
+      await block(`Go ${exerciseIndex}`, options.exerciseTime)
       // skip rest if it's the last exercise
-      if (exerciseIndex !== config.exerciseCount) {
-        await block(`Rest`, config.exerciseRestTime)
+      if (exerciseIndex !== options.exerciseCount) {
+        await block(`Rest`, options.exerciseRestTime)
       }
     }
-    if (roundIndex !== config.roundCount) {
-      await block(`Rest between rounds`, config.roundRestTime)
+    if (roundIndex !== options.roundCount) {
+      await block(`Rest between rounds`, options.roundRestTime)
     }
   }
 }
@@ -51,7 +43,15 @@ export async function train(queueOrPath: TrainingOptions[] | string) {
   }
 
   for (const options of queue) {
-    await training(options)
+    if (options.children) {
+      for (let roundIndex = 1; roundIndex <= options.roundCount; roundIndex++) {
+        for (const child of options.children) {
+          await training(child)
+        }
+      }
+    } else {
+      await training(options)
+    }
   }
 
   await say("done")
