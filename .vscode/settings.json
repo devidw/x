@@ -1,4 +1,5 @@
 {
   "deno.enable": true,
-  "deno.unstable": true,
+  "deno.inlayHints.variableTypes.enabled": true,
+  "deno.enablePaths": ["."]
 }

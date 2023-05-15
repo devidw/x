@@ -29,6 +29,8 @@ if [ "$D_X" ]; then
   echo $path
 
   if [ -f $path ]; then
+    # echo "$path $rest"
+    chmod +x $path
     $path $rest
     exit $?
   fi

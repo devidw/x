@@ -1,7 +1,7 @@
 _shell rc_
 [source,shell]
 ----
-export D_X="/Users/devidw/Desktop/GitHub/x"
+export D_X="$HOME/Desktop/code/x"
 
 if [ -d $D_X ]; then
 	alias x="$D_X/entry.sh"
